@@ -5,6 +5,9 @@ node_modules/
 dist/
 *.tsbuildinfo
 
+# npm lockfile (required for CI's `npm ci`)
+!package-lock.json
+
 # logs
 npm-debug.log*
 yarn-debug.log*

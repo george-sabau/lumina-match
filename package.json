@@ -1,6 +1,6 @@
 {
   "name": "lumina-match",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "High-performance n-gram + fuzzy matcher for user-input suggestions.",
   "license": "MIT",
   "author": "",

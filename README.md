@@ -28,9 +28,57 @@ console.log(matcher.suggestions('Kybord'));
 // => [{ id: 'A-12', phrase: 'Wireless Keyboard Layout', confidence: 78 }]
 ```
 
+### More examples
+
+#### Get more / fewer suggestions
+
+```ts
+import { createMatcher } from 'lumina-match';
+
+const matcher = createMatcher(myDataSet);
+
+matcher.suggestions('usb', 3); // top = 3
+matcher.suggestions('usb', 20); // top = 20
+```
+
+#### One-off helper (no matcher reuse)
+
+```ts
+import { suggestions } from 'lumina-match';
+
+suggestions(myDataSet, 'mech swtch', { top: 5 });
+```
+
+#### Use `EntityMatcher` directly
+
+```ts
+import { EntityMatcher } from 'lumina-match';
+
+const engine = new EntityMatcher(myDataSet);
+engine.suggest('Kybord', 10); // limit = 10
+```
+
+#### Typical UI pattern (reuse matcher)
+
+```ts
+import { createMatcher } from 'lumina-match';
+
+const matcher = createMatcher(myDataSet);
+
+export function onUserInput(value: string) {
+  // Library returns [] for empty/very short queries.
+  return matcher.suggestions(value, 10);
+}
+```
+
 ## API
 
-- `createMatcher(data).suggestions(input, top=10)`\n- `new EntityMatcher(data).suggest(query, limit=5)`\n- `suggestions(data, input, { top })`\n+
+- `createMatcher(data).suggestions(input, top = 10)`
+- `new EntityMatcher(data).suggest(query, limit = 5)`
+- `suggestions(data, input, { top })`
+
 ### Data types
 
-- `DataItem`: `{ id: string; phrase: string }`\n- `Suggestion`: `{ id: string; phrase: string; confidence: number }` (0–100)\n+
+- `DataItem`: `{ id: string; phrase: string }`
+- `Suggestion`: `{ id: string; phrase: string; confidence: number }` (0–100)
+

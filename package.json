@@ -28,6 +28,8 @@
     "dev": "tsup --watch",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:debug": "node --inspect-brk ./node_modules/vitest/vitest.mjs run",
+    "test:debug:watch": "node --inspect-brk ./node_modules/vitest/vitest.mjs",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

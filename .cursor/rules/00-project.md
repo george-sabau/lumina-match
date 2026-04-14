@@ -16,7 +16,7 @@ description: Project intent and session workflow (read history first).
   - **MINOR**: backwards-compatible new features, new public exports, new options (with safe defaults), expanded behavior that doesn’t break existing callers.
   - **MAJOR**: breaking changes (renames/removals), signature/type changes that break compilation, default behavior changes, stricter validation that can throw/reject where it previously didn’t.
   - If unsure, **choose the higher bump** (safer for consumers), and summarize the reasoning in `.cursor/HISTORY.md`.
-- Periodically (and when rules start feeling “noisy”): **self-audit** `.cursor/rules/*.md` and `.cursor/HISTORY.md` and remove/condense anything that is no longer needed, contradictory, duplicative, or bloating effectiveness. Keep guidance crisp and enforceable.
+- Periodically (and when rules start feeling “noisy”): **self-audit** `.cursor/rules/*.md` and `.cursor/skills/*.md` and `.cursor/HISTORY.md` and remove/condense anything that is no longer needed, contradictory, duplicative, or bloating effectiveness. Keep guidance crisp and enforceable.
 - At the end of each work session: **append** a short entry to `.cursor/HISTORY.md` with:
   - what changed
   - what worked / didn’t
